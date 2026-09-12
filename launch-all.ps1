@@ -9,7 +9,7 @@ Write-Host "========================================================" -Foregroun
 $backendPort = Get-NetTCPConnection -LocalPort 5118 -State Listen 2>$null
 if (-not $backendPort) {
     Write-Host "[1/2] Starting ASP.NET Core Backend API on http://localhost:5118..." -ForegroundColor Cyan
-    $backendDir = Join-Path $PSScriptRoot "Event-Parking-System-final-prject\Event  And Parking  Reservation system"
+    $backendDir = Join-Path $PSScriptRoot "Event-Parking-System-final-project\Event  And Parking  Reservation system"
     Start-Process cmd.exe -ArgumentList "/k", "cd /d `"$backendDir`" && dotnet run --launch-profile http" -WindowStyle Normal
     
     # Wait for Backend to bind to port 5118

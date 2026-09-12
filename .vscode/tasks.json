@@ -17,7 +17,7 @@
       "type": "shell",
       "command": "dotnet run --launch-profile http",
       "options": {
-        "cwd": "${workspaceFolder}/Event-Parking-System-final-prject/Event  And Parking  Reservation system"
+        "cwd": "${workspaceFolder}/Event-Parking-System-final-project/Event  And Parking  Reservation system"
       },
       "isBackground": true,
       "problemMatcher": [],

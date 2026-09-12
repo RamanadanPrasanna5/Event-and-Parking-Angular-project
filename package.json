@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4200 --open",
-    "start:backend": "powershell -Command \"cd 'Event-Parking-System-final-prject/Event  And Parking  Reservation system'; dotnet run --launch-profile http\"",
+    "start:backend": "powershell -Command \"cd 'Event-Parking-System-final-project/Event  And Parking  Reservation system'; dotnet run --launch-profile http\"",
     "serve": "ng serve --port 4200 --open",
     "open": "powershell Start-Process 'http://localhost:4200/'",
     "build": "ng build",

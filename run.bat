@@ -8,7 +8,7 @@ echo ========================================================
 echo.
 
 echo [1/2] Starting ASP.NET Core Web API...
-start "EventPark Backend API" cmd /k "cd /d ""%~dp0Event-Parking-System-final-prject\Event  And Parking  Reservation system"" && dotnet run --launch-profile http"
+start "EventPark Backend API" cmd /k "cd /d ""%~dp0Event-Parking-System-final-project\Event  And Parking  Reservation system"" && dotnet run --launch-profile http"
 
 echo.
 echo Waiting for backend to start...
