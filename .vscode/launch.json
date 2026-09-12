@@ -1,0 +1,69 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "🚀 Launch EventPark (Chrome)",
+      "type": "chrome",
+      "request": "launch",
+      "preLaunchTask": "npm: start",
+      "url": "http://localhost:4200/",
+      "webRoot": "${workspaceFolder}",
+      "sourceMapPathOverrides": {
+        "webpack:/*": "${webRoot}/*",
+        "/./*": "${webRoot}/*",
+        "/src/*": "${webRoot}/*"
+      }
+    },
+    {
+      "name": "🌐 Launch EventPark (Edge)",
+      "type": "msedge",
+      "request": "launch",
+      "preLaunchTask": "npm: start",
+      "url": "http://localhost:4200/",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "name": "🔗 Open EventPark (server already running)",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:4200/",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "name": "🔐 Open Login Page",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:4200/login",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "name": "📝 Open Register Page",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:4200/register",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "name": "🎫 Open Events Page",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:4200/events",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "name": "🛡️ Open Admin Dashboard",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:4200/admin/dashboard",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "name": "🧪 Debug Unit Tests (Karma)",
+      "type": "chrome",
+      "request": "launch",
+      "preLaunchTask": "npm: test",
+      "url": "http://localhost:9876/debug.html",
+      "webRoot": "${workspaceFolder}"
+    }
+  ]
+}
