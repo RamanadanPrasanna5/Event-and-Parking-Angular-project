@@ -216,9 +216,9 @@ export class SeatsManagementComponent implements OnInit {
 
   ngOnInit(): void {
     this.generateForm = this.fb.group({
-      rows: [5, [Validators.required, Validators.min(1), Validators.max(26)]],
-      seatsPerRow: [10, [Validators.required, Validators.min(1), Validators.max(30)]],
-      basePrice: [1500, [Validators.required, Validators.min(0)]]
+      rows: [null, [Validators.required, Validators.min(1), Validators.max(26)]],
+      seatsPerRow: [null, [Validators.required, Validators.min(1), Validators.max(30)]],
+      basePrice: [null, [Validators.required, Validators.min(0)]]
     });
 
     this.eventService.getEvents().subscribe({

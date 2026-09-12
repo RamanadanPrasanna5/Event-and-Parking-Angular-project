@@ -258,15 +258,15 @@ export class ParkingManagementComponent implements OnInit {
 
   ngOnInit(): void {
     this.generateForm = this.fb.group({
-      zone: ['General', [Validators.required]],
-      numberOfSlots: [20, [Validators.required, Validators.min(1), Validators.max(100)]],
-      defaultFee: [500, [Validators.required, Validators.min(0)]]
+      zone: ['', [Validators.required]],
+      numberOfSlots: [null, [Validators.required, Validators.min(1), Validators.max(100)]],
+      defaultFee: [null, [Validators.required, Validators.min(0)]]
     });
 
     this.addSlotForm = this.fb.group({
-      zone: ['General', [Validators.required]],
-      slotNumber: [1, [Validators.required, Validators.min(1)]],
-      fee: [500, [Validators.required, Validators.min(0)]]
+      zone: ['', [Validators.required]],
+      slotNumber: [null, [Validators.required, Validators.min(1)]],
+      fee: [null, [Validators.required, Validators.min(0)]]
     });
 
     this.eventService.getEvents().subscribe({

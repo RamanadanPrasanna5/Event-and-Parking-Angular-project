@@ -278,9 +278,9 @@ export class EventsManagementComponent implements OnInit {
     this.isEditing = false;
     this.editingId = null;
     this.eventForm.reset({
-      capacity: 100,
-      venueId: this.venues()[0]?.id || null,
-      categoryId: this.categories()[0]?.id || null
+      capacity: null,
+      venueId: null,
+      categoryId: null
     });
     this.showEventModal = true;
   }

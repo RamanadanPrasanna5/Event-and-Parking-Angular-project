@@ -1,7 +1,7 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
-import { Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../../core/services/auth.service';
 import { ToastService } from '../../../core/services/toast.service';
 
@@ -357,14 +357,17 @@ export class ResetPasswordComponent implements OnInit {
   private authService = inject(AuthService);
   private toastService = inject(ToastService);
   private router = inject(Router);
+  private route = inject(ActivatedRoute);
 
   resetForm!: FormGroup;
   loading = signal<boolean>(false);
   errorMessage = signal<string | null>(null);
   showPassword = false;
   showConfirmPassword = false;
+  token = '';
 
   ngOnInit(): void {
+    this.token = this.route.snapshot.queryParamMap.get('token') || '';
     this.resetForm = this.fb.group(
       {
         newPassword: ['', [Validators.required, Validators.minLength(6)]],
@@ -385,20 +388,25 @@ export class ResetPasswordComponent implements OnInit {
       return;
     }
 
+    if (!this.token) {
+      this.errorMessage.set('Invalid or missing password reset token. Please request a new reset link.');
+      return;
+    }
+
     this.loading.set(true);
     this.errorMessage.set(null);
 
     const { newPassword } = this.resetForm.value;
 
-    this.authService.resetPassword({ token: 'mock_token', newPassword }).subscribe({
+    this.authService.resetPassword({ token: this.token, newPassword }).subscribe({
       next: () => {
         this.loading.set(false);
         this.toastService.success('Password updated successfully! Please login with your new credentials.', 'Success');
         this.router.navigate(['/login']);
       },
-      error: () => {
+      error: (err: any) => {
         this.loading.set(false);
-        this.errorMessage.set('Password reset failed. Please try again.');
+        this.errorMessage.set(err?.error?.Message || err?.error?.message || 'Password reset failed. Please try again.');
       }
     });
   }

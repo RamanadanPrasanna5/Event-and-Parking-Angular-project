@@ -168,7 +168,7 @@ export class VenuesManagementComponent implements OnInit {
   openCreateModal(): void {
     this.isEditing = false;
     this.editingId = null;
-    this.venueForm.reset({ capacity: 500 });
+    this.venueForm.reset();
     this.showModal = true;
   }
 

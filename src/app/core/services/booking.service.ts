@@ -34,16 +34,16 @@ export class BookingService {
           res?.ReservationId ??
           res?.booking?.id ??
           res?.booking?.bookingId ??
-          101;
+          0;
         const bNum =
           res?.BookingNumber ??
           res?.bookingNumber ??
           res?.booking?.bookingNumber ??
-          ('VG-' + Math.floor(100000 + Math.random() * 900000));
+          '';
         const expires =
           res?.HoldExpiresAt ??
           res?.holdExpiresAt ??
-          new Date(Date.now() + 15 * 60 * 1000).toISOString();
+          '';
 
         return {
           message: res?.Message || res?.message || 'Booking hold created successfully.',

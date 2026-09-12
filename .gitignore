@@ -40,3 +40,10 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Visual Studio & .NET build output
+.vs/
+**/bin/
+**/obj/
+*.user
+

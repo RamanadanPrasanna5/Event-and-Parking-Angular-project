@@ -1,2 +1,49 @@
+<!-- Premium Glassmorphic Splash Screen Overlay -->
+@if (showSplash()) {
+  <div class="app-splash-overlay" [class.fade-out]="splashFading()">
+    <!-- Ambient background glow elements -->
+    <div class="splash-orb orb-1"></div>
+    <div class="splash-orb orb-2"></div>
+    
+    <div class="splash-card glass-panel">
+      <!-- Brand Logo -->
+      <div class="splash-logo-wrapper">
+        <div class="splash-icon-box">
+          <i class="fa-solid fa-calendar-check logo-icon"></i>
+          <div class="parking-badge">
+            <i class="fa-solid fa-square-parking"></i>
+          </div>
+        </div>
+        <div class="brand-text">
+          <h1 class="brand-name">Event<span class="highlight">Park</span></h1>
+          <p class="brand-tagline">Event Booking & Parking Platform</p>
+        </div>
+      </div>
+
+      <!-- Progress Indicator -->
+      <div class="splash-progress-section">
+        <div class="progress-info">
+          <span class="loading-label">
+            <i class="fa-solid fa-sparkles text-accent"></i> Initializing workspace...
+          </span>
+          <span class="progress-percent">{{ progress() }}%</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-bar-fill" [style.width.%]="progress()"></div>
+        </div>
+      </div>
+
+      <!-- Feature Badges -->
+      <div class="splash-features">
+        <span class="feature-chip"><i class="fa-solid fa-ticket text-primary"></i> Smart Tickets</span>
+        <span class="feature-chip"><i class="fa-solid fa-square-parking text-secondary"></i> Reserved Parking</span>
+        <span class="feature-chip"><i class="fa-solid fa-bolt text-warning"></i> Instant Confirmation</span>
+      </div>
+    </div>
+  </div>
+}
+
 <router-outlet></router-outlet>
 <app-toast></app-toast>
+
+

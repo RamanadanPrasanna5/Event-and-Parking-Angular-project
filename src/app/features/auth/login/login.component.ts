@@ -38,18 +38,7 @@ import { ToastService } from '../../../core/services/toast.service';
               </div>
             }
 
-            <!-- Demo Credentials -->
-            <div class="demo-card mb-4">
-              <p class="demo-title"><i class="fa-solid fa-key me-1"></i> Quick Login</p>
-              <div class="d-flex gap-3">
-                <button type="button" class="btn btn-secondary btn-sm flex-grow-1" (click)="autoFillAdmin()">
-                  <i class="fa-solid fa-user-shield"></i> Admin
-                </button>
-                <button type="button" class="btn btn-secondary btn-sm flex-grow-1" (click)="autoFillCustomer()">
-                  <i class="fa-regular fa-user"></i> Customer
-                </button>
-              </div>
-            </div>
+
 
             <!-- Form -->
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
@@ -319,16 +308,6 @@ export class LoginComponent implements OnInit {
   isFieldInvalid(fieldName: string): boolean {
     const field = this.loginForm.get(fieldName);
     return !!(field && field.invalid && (field.dirty || field.touched));
-  }
-
-  autoFillAdmin(): void {
-    this.loginForm.patchValue({ email: 'admin@venuego.com', password: 'Admin@123' });
-    this.toastService.info('Admin credentials filled.');
-  }
-
-  autoFillCustomer(): void {
-    this.loginForm.patchValue({ email: 'customer@venuego.com', password: 'Customer@123' });
-    this.toastService.info('Customer credentials filled.');
   }
 
   onSubmit(): void {

@@ -2,68 +2,91 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "🚀 Launch EventPark (Chrome)",
+      "name": "🚀 Launch EventPark Full Stack (Chrome)",
       "type": "chrome",
       "request": "launch",
-      "preLaunchTask": "npm: start",
       "url": "http://localhost:4200/",
       "webRoot": "${workspaceFolder}",
-      "sourceMapPathOverrides": {
-        "webpack:/*": "${webRoot}/*",
-        "/./*": "${webRoot}/*",
-        "/src/*": "${webRoot}/*"
-      }
+      "preLaunchTask": "🚀 Start Full Stack (Backend + Frontend)",
+      "userDataDir": "${workspaceFolder}/.vscode/vscode-chrome-debug-profile",
+      "runtimeArgs": [
+        "--remote-debugging-port=0"
+      ],
+      "cleanUp": "wholeBrowser",
+      "skipFiles": [
+        "chrome://**",
+        "chrome-extension://**",
+        "<node_internals>/**"
+      ]
     },
     {
-      "name": "🌐 Launch EventPark (Edge)",
+      "name": "🌐 Launch EventPark Full Stack (Edge)",
       "type": "msedge",
       "request": "launch",
-      "preLaunchTask": "npm: start",
       "url": "http://localhost:4200/",
-      "webRoot": "${workspaceFolder}"
+      "webRoot": "${workspaceFolder}",
+      "preLaunchTask": "🚀 Start Full Stack (Backend + Frontend)",
+      "userDataDir": "${workspaceFolder}/.vscode/vscode-edge-debug-profile",
+      "runtimeArgs": [
+        "--remote-debugging-port=0"
+      ],
+      "cleanUp": "wholeBrowser",
+      "skipFiles": [
+        "edge://**",
+        "chrome-extension://**",
+        "<node_internals>/**"
+      ]
     },
     {
-      "name": "🔗 Open EventPark (server already running)",
-      "type": "chrome",
-      "request": "launch",
-      "url": "http://localhost:4200/",
-      "webRoot": "${workspaceFolder}"
-    },
-    {
-      "name": "🔐 Open Login Page",
+      "name": "🔐 Open Login Page (Chrome)",
       "type": "chrome",
       "request": "launch",
       "url": "http://localhost:4200/login",
-      "webRoot": "${workspaceFolder}"
+      "webRoot": "${workspaceFolder}",
+      "userDataDir": "${workspaceFolder}/.vscode/vscode-chrome-debug-profile",
+      "runtimeArgs": [
+        "--remote-debugging-port=0"
+      ],
+      "cleanUp": "wholeBrowser",
+      "skipFiles": [
+        "chrome://**",
+        "chrome-extension://**",
+        "<node_internals>/**"
+      ]
     },
     {
-      "name": "📝 Open Register Page",
-      "type": "chrome",
-      "request": "launch",
-      "url": "http://localhost:4200/register",
-      "webRoot": "${workspaceFolder}"
-    },
-    {
-      "name": "🎫 Open Events Page",
+      "name": "🎫 Open Events Catalogue (Chrome)",
       "type": "chrome",
       "request": "launch",
       "url": "http://localhost:4200/events",
-      "webRoot": "${workspaceFolder}"
+      "webRoot": "${workspaceFolder}",
+      "userDataDir": "${workspaceFolder}/.vscode/vscode-chrome-debug-profile",
+      "runtimeArgs": [
+        "--remote-debugging-port=0"
+      ],
+      "cleanUp": "wholeBrowser",
+      "skipFiles": [
+        "chrome://**",
+        "chrome-extension://**",
+        "<node_internals>/**"
+      ]
     },
     {
-      "name": "🛡️ Open Admin Dashboard",
+      "name": "🛡️ Open Admin Dashboard (Chrome)",
       "type": "chrome",
       "request": "launch",
       "url": "http://localhost:4200/admin/dashboard",
-      "webRoot": "${workspaceFolder}"
-    },
-    {
-      "name": "🧪 Debug Unit Tests (Karma)",
-      "type": "chrome",
-      "request": "launch",
-      "preLaunchTask": "npm: test",
-      "url": "http://localhost:9876/debug.html",
-      "webRoot": "${workspaceFolder}"
+      "webRoot": "${workspaceFolder}",
+      "userDataDir": "${workspaceFolder}/.vscode/vscode-chrome-debug-profile",
+      "runtimeArgs": [
+        "--remote-debugging-port=0"
+      ],
+      "cleanUp": "wholeBrowser",
+      "skipFiles": [
+        "chrome://**",
+        "chrome-extension://**",
+        "<node_internals>/**"
+      ]
     }
   ]
 }

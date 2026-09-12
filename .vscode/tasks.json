@@ -2,19 +2,10 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "npm: start",
-      "type": "npm",
-      "script": "start",
-      "isBackground": true,
-      "problemMatcher": {
-        "owner": "typescript",
-        "pattern": "$tsc",
-        "background": {
-          "activeOnStart": true,
-          "beginsPattern": { "regexp": "(.*?)" },
-          "endsPattern": { "regexp": "bundle generation complete|Angular Live Development Server is listening" }
-        }
-      },
+      "label": "🚀 Start Full Stack (Backend + Frontend)",
+      "type": "shell",
+      "command": "powershell -ExecutionPolicy Bypass -File \"${workspaceFolder}/launch-all.ps1\"",
+      "problemMatcher": [],
       "presentation": {
         "reveal": "always",
         "panel": "new",
@@ -22,11 +13,25 @@
       }
     },
     {
-      "label": "🚀 Start EventPark Dev Server",
+      "label": "⚡ Start ASP.NET Backend API",
+      "type": "shell",
+      "command": "dotnet run --launch-profile http",
+      "options": {
+        "cwd": "${workspaceFolder}/Event-Parking-System-final-prject/Event  And Parking  Reservation system"
+      },
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "group": "EventPark"
+      }
+    },
+    {
+      "label": "🚀 Start EventPark Frontend",
       "type": "npm",
       "script": "start",
       "isBackground": true,
-      "group": "build",
       "problemMatcher": {
         "owner": "typescript",
         "pattern": "$tsc",
