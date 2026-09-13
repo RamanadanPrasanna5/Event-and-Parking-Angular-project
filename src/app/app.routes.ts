@@ -87,6 +87,7 @@ export const routes: Routes = [
     children: [
       // Landing Page
       {
+        // Home Page
         path: '',
         loadComponent: () => import('./features/home/home.component').then(m => m.HomeComponent),
         title: 'Eventro — Event & Parking Reservation'
